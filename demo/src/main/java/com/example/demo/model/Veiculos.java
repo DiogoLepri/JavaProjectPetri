@@ -9,22 +9,18 @@ public abstract class Veiculos {
     private String marca;
     private String modelo;
     private int ano;
-
-    @NotNull
-    @Column(nullable = false)
-    @Min(value = 1)
-    private double preco;
-    private String status;
+    private String preco;
+    private String cor;
     public Veiculos() {
 
     }
 
-    public Veiculos(String marca, String modelo, int ano, double preco, String status) {
+    public Veiculos(String marca, String modelo, int ano, String preco, String cor) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.preco = preco;
-        this.status = status;
+        this.cor = cor;
     }
 
     public String getMarca() {
@@ -51,20 +47,20 @@ public abstract class Veiculos {
         this.ano = ano;
     }
 
-    public double getPreco() {
+    public String getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(String preco) {
         this.preco = preco;
     }
 
-    public String getStatus() {
-        return status;
+    public String getCor() {
+        return cor;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setCor(String cor) {
+        this.cor = cor;
     }
 
 }

@@ -5,7 +5,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import java.util.UUID;
 
 @Entity
 public class Carros extends Veiculos {
@@ -18,8 +17,8 @@ public class Carros extends Veiculos {
     public Carros() {
     }
 
-    public Carros(String marca, String modelo, int ano, double preco, String status, int numeroPortas, long id) {
-        super(marca, modelo, ano, preco, status);
+    public Carros(String marca, String modelo, int ano, String preco, String cor, int numeroPortas, long id) {
+        super(marca, modelo, ano, preco, cor);
         this.numeroPortas = numeroPortas;
     }
 

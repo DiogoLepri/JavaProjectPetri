@@ -6,16 +6,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public abstract class Motos extends Veiculos{
+public class Motos extends Veiculos{
     private int cilindradas;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     public Motos() {
 
     }
-    public Motos(String marca, String modelo, int ano, double preco, String status, int cilindradas, int id) {
+    public Motos(String marca, String modelo, int ano, String preco, String status, int cilindradas, long id) {
         super(marca, modelo, ano, preco, status);
         this.cilindradas = cilindradas;
     }
@@ -28,11 +28,11 @@ public abstract class Motos extends Veiculos{
         this.cilindradas = cilindradas;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 }
