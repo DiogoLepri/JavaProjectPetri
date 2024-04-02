@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Veiculos;
+import com.example.demo.model.Motos;
 import com.example.demo.service.MotosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,31 +16,31 @@ public class MotosController {
     @Autowired
     private MotosService motosService;
 
-    // List all motorcycles
+    // List all vehicles
     @GetMapping
-    public ResponseEntity<List<Veiculos>> listar() {
-        List<Veiculos> lista = motosService.listar();
+    public ResponseEntity<List<Motos>> listar() {
+        List<Motos> lista = motosService.listar();
         return new ResponseEntity<>(lista, HttpStatus.OK);
     }
 
-    // Create a new motorcycle
+    // Create a new vehicle
     @PostMapping
-    public ResponseEntity<Veiculos> criar(@RequestBody Veiculos veiculos) {
-        Veiculos novaMoto = motosService.criar(veiculos);
-        return new ResponseEntity<>(novaMoto, HttpStatus.CREATED);
+    public ResponseEntity<Motos> criar(@RequestBody Motos motos) {
+        Motos novoVeiculo = motosService.criar(motos);
+        return new ResponseEntity<>(novoVeiculo, HttpStatus.CREATED);
     }
 
-    // Update an existing motorcycle
+    // Update an existing vehicle
     @PutMapping("/{id}")
-    public ResponseEntity<Veiculos> atualizar(@RequestBody Veiculos veiculos, @PathVariable Long id) {
-        Veiculos motoAtualizada = motosService.atualizar(veiculos, id);
-        if(motoAtualizada == null) {
+    public ResponseEntity<Motos> atualizar(@RequestBody Motos motos, @PathVariable Long id) {
+        Motos veiculoAtualizado = motosService.atualizar(motos, id); // Ensure this method returns Carros
+        if(veiculoAtualizado == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(motoAtualizada, HttpStatus.OK);
+        return new ResponseEntity<>(veiculoAtualizado, HttpStatus.OK);
     }
 
-    // Delete a motorcycle
+    // Delete a vehicle
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         boolean deleted = motosService.deletar(id);

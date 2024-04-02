@@ -9,14 +9,16 @@ import jakarta.persistence.Id;
 public class Motos extends Veiculos{
     private int cilindradas;
 
+    private String Kilometragem;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     public Motos() {
 
     }
-    public Motos(String marca, String modelo, int ano, String preco, String status, int cilindradas, long id) {
-        super(marca, modelo, ano, preco, status);
+    public Motos(long id,String marca, String modelo, int ano, String preco, String cor, int cilindradas, String kilometragem) {
+        super(marca, modelo, ano, preco, cor);
         this.cilindradas = cilindradas;
     }
 
@@ -35,6 +37,15 @@ public class Motos extends Veiculos{
     public void setId(long id) {
         this.id = id;
     }
+
+    public String getKilometragem() {
+        return Kilometragem;
+    }
+
+    public void setKilometragem(String kilometragem) {
+        Kilometragem = kilometragem;
+    }
 }
+
 
 

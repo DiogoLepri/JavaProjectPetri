@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Carros extends Veiculos {
-    private int numeroPortas;
+    private String Kilometragem;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,17 +17,16 @@ public class Carros extends Veiculos {
     public Carros() {
     }
 
-    public Carros(String marca, String modelo, int ano, String preco, String cor, int numeroPortas, long id) {
+    public Carros(long id,String marca, String modelo, int ano, String preco, String cor, String Kilometragem) {
         super(marca, modelo, ano, preco, cor);
-        this.numeroPortas = numeroPortas;
     }
 
-    public int getNumeroDePortas() {
-        return numeroPortas;
+    public String getKilometragem() {
+        return Kilometragem;
     }
 
-    public void setNumeroDePortas(int numeroDePortas) {
-        this.numeroPortas = numeroDePortas;
+    public void setKilometragem(String kilometragem) {
+        Kilometragem = kilometragem;
     }
 
     public long getId() {
