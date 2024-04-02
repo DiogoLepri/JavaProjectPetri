@@ -1,24 +1,23 @@
 package com.example.demo.service;
 
-import com.example.demo.model.Carros;
 import com.example.demo.model.Veiculos;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class CarrosService implements VeiculosService<Carros>{
+public class MotosService implements VeiculosService<Veiculos>{
     @Override
-    public List<Carros> listar() {
+    public List<Veiculos> listar() {
         return null;
     }
 
     @Override
-    public Carros criar(Carros carros) {
+    public Veiculos criar(Veiculos veiculos) {
         return null;
     }
 
     @Override
-    public Carros atualizar(Carros carros, Long id) {
+    public Veiculos atualizar(Veiculos veiculos, Long id) {
         return null;
     }
 

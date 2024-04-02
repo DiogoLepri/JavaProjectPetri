@@ -7,8 +7,6 @@ public class Gerente extends Funcionario {
     private int senha;
     private int numFuncGerenciados;
 
-    public Gerente() {
-    }
 
     public Gerente(String nome, String cpf, double salario, int senha, int numFuncGerenciados) {
         super(nome, cpf, salario);

@@ -22,14 +22,14 @@ public class FuncionarioService {
     }
 
     public Funcionario atualizar(Long id, Funcionario funcionario) {
-        //verificar se o id é valido
+
         if(funcionarioRepository.existsById(id)) {
-            //atualizar o objeto na base
+
             funcionario.setId(id);
             return funcionarioRepository.save(funcionario);
         }
         return null;
-        // não realiza nenhuma alteração
+
     }
 
     public boolean deletar(Long id) {

@@ -13,6 +13,7 @@ public class Funcionario {
     private Long id;
     private String nome;
 
+
     @NotNull(message = "Campo cpf não pode ser nulo!")
     @Column(nullable = false)
     @Size(min = 11, max = 14)
@@ -22,8 +23,6 @@ public class Funcionario {
     @Min(value = 1)
     private double salario;
 
-    public Funcionario() {
-    }
 
     public Funcionario(String nome, String cpf, double salario) {
         this.nome = nome;
