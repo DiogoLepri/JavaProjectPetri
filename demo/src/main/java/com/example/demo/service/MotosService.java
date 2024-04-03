@@ -1,11 +1,13 @@
 package com.example.demo.service;
 
 
+import com.example.demo.model.Carros;
 import com.example.demo.model.Motos;
 import com.example.demo.repository.MotosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -28,10 +30,10 @@ public class MotosService implements VeiculosService<Motos> {
     @Override
     public Motos atualizar(Motos motos, Long id) {
         if (motosRepository.existsById(id)) {
-            motos.setId(id); // Garante que o carro atualizado terá o ID correto.
+            motos.setId(id);
             return motosRepository.save(motos);
         }
-        return null; // Ou você pode lançar uma exceção se preferir.
+        return null;
     }
 
 
@@ -42,5 +44,10 @@ public class MotosService implements VeiculosService<Motos> {
             return true;
         }
         return false;
+    }
+    public List<Motos> listarOrdenadoPorPreco() {
+        List<Motos> listaMoto = motosRepository.findAll();
+        listaMoto.sort(Comparator.comparingInt(Motos::getPreco).reversed());
+        return listaMoto;
     }
 }

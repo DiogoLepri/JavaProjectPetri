@@ -17,7 +17,7 @@ public class Motos extends Veiculos{
     public Motos() {
 
     }
-    public Motos(long id,String marca, String modelo, int ano, String preco, String cor, int cilindradas, String kilometragem) {
+    public Motos(long id,String marca, String modelo, int ano, int preco, String cor, int cilindradas, String kilometragem) {
         super(marca, modelo, ano, preco, cor);
         this.cilindradas = cilindradas;
     }

@@ -1,21 +1,19 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
 
 @MappedSuperclass
 public abstract class Veiculos {
     private String marca;
     private String modelo;
     private int ano;
-    private String preco;
+    private int preco;
     private String cor;
     public Veiculos() {
 
     }
 
-    public Veiculos(String marca, String modelo, int ano, String preco, String cor) {
+    public Veiculos(String marca, String modelo, int ano, int preco, String cor) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
@@ -47,11 +45,11 @@ public abstract class Veiculos {
         this.ano = ano;
     }
 
-    public String getPreco() {
+    public int getPreco() {
         return preco;
     }
 
-    public void setPreco(String preco) {
+    public void setPreco(int preco) {
         this.preco = preco;
     }
 

@@ -26,14 +26,14 @@ public class CarrosController {
     // Create a new vehicle
     @PostMapping
     public ResponseEntity<Carros> criar(@RequestBody Carros carros) {
-        Carros novoVeiculo = carrosService.criar(carros); // Corrected Carros variable
+        Carros novoVeiculo = carrosService.criar(carros);
         return new ResponseEntity<>(novoVeiculo, HttpStatus.CREATED);
     }
 
     // Update an existing vehicle
     @PutMapping("/{id}")
     public ResponseEntity<Carros> atualizar(@RequestBody Carros carros, @PathVariable Long id) {
-        Carros veiculoAtualizado = carrosService.atualizar(carros, id); // Ensure this method returns Carros
+        Carros veiculoAtualizado = carrosService.atualizar(carros, id);
         if(veiculoAtualizado == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -50,4 +50,11 @@ public class CarrosController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @GetMapping("/ordenar-por-preco")
+    public ResponseEntity<List<Carros>> listarOrdenadoPorPreco() {
+        List<Carros> listaOrdenada = carrosService.listarOrdenadoPorPreco();
+        return new ResponseEntity<>(listaOrdenada, HttpStatus.OK);
+    }
 }
+
+

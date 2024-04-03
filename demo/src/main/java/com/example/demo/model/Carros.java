@@ -17,7 +17,7 @@ public class Carros extends Veiculos {
     public Carros() {
     }
 
-    public Carros(long id,String marca, String modelo, int ano, String preco, String cor, String Kilometragem) {
+    public Carros(long id,String marca, String modelo, int ano, int preco, String cor, String Kilometragem) {
         super(marca, modelo, ano, preco, cor);
     }
 
